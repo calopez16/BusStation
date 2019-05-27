@@ -70,7 +70,7 @@ namespace CamionesApp.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength =1)]
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
         public string Password { get; set; }
@@ -79,6 +79,12 @@ namespace CamionesApp.Models
         [Display(Name = "Confirmar contraseña")]
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string tipodeUsuario { get; set;  }
+
+        public string nombreCamion { get; set; }
+
     }
 
     public class ResetPasswordViewModel

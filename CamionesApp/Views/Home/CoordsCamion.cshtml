@@ -1,0 +1,15 @@
+﻿@model CamionesApp.Models.AspNetUsers
+@{
+    Layout = null;
+}
+
+@if (Model.tipodeUsuario.Equals("camionero"))
+{
+    <input type="text" value="@Model.activo" name="activoCamionero" id="activoCamionero" />
+
+}
+
+<input type="text" value="@Model.Email" name="UsuarioCamion" />
+
+<input type="text" value="@ViewBag.Latitud" id="latitudCamionero" name="latitudCamionero" />
+<input type="text" value="@ViewBag.Longitud" id="longitudCamionero" name="longitudCamionero" />

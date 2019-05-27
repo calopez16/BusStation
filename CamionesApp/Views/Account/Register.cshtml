@@ -3,14 +3,22 @@
     ViewBag.Title = "Registrarse";
 }
 
-<h2>@ViewBag.Title.</h2>
+<style>
+    .hidden{
+        display:none;
+    }
+</style>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Cree una cuenta nueva.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <br />
+    <div style="text-align:center">
+        <img src="~/img/iconoCamionesApp.png" width="200" />
+
+    </div>
+    <br />
+    @Html.ValidationSummary("", new { @style = "color:red" })
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -30,6 +38,23 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.tipodeUsuario,"Usuario", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <select name="tipodeUsuario" onchange="habilitarDes()" class="form-control">
+                <option value="usuario" id="usuario">Usuario</option>
+                <option value="camionero" id="camionero">Camionero</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group hidden" id="nombrecamion">
+        @Html.LabelFor(m => m.nombreCamion,"Nombre del camión", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.nombreCamion, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Registrarse" />
         </div>
@@ -39,3 +64,15 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<script>
+    function habilitarDes() {
+        if (document.getElementById('camionero').selected) {
+            document.getElementById('nombrecamion').classList.remove("hidden");
+        } else {
+            document.getElementById('nombrecamion').classList.add("hidden");
+
+        }
+
+    }
+</script>

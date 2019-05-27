@@ -1,12 +1,107 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Learn how to quickly get started using our CSS framework. We have guides for a variety of skill levels.">
+    <title>Getting Started - Materialize</title>
+    <!-- Favicons-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+    <link href="~/Content/materialize/css/prism.css" rel="stylesheet">
+    <link href="~/Content/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col s12 m10 offset-m1">
+                            <h4 class="header" style="font-weight:bold !important;margin-top:40px">@ViewBag.Title</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container"><a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+        <ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(-105%);">
+            <li class="logo" style="margin-bottom:60px">
+                <a id="logo-container" href="@Url.Action("Index","Home")" class="brand-logo">
+                    <img src="~/img/iconoCamionesApp.png" width="200" />
+                </a>
+            </li>
+        
+
+            @Html.Partial("_LoginPartial")
+
+
+           
+        </ul>
+
+    </header>
+    <main class="container">
+        @RenderBody()
+    </main>
+    <footer class="page-footer docs-footer"></footer>
+
+    <!--  Scripts-->
+    <script src="~/Content/materialize/js/jquery.timeago.min.js"></script>
+    <script src="~/Content/materialize/js/prism.js"></script>
+    <script src="~/Content/materialize/js/materialize.js"></script>
+    <script src="~/Content/materialize/js/init.js"></script>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>Camiones App</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
 </head>
 <body>
@@ -30,7 +125,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="">
         @RenderBody()
         <hr />
         <footer>
@@ -38,8 +133,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
-</html>
+</html>*@

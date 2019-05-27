@@ -151,7 +151,7 @@ namespace CamionesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,tipodeUsuario=model.tipodeUsuario,nombreCamion=model.nombreCamion };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

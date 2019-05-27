@@ -9,6 +9,14 @@ namespace CamionesApp.Models
     // Para agregar datos de perfil del usuario, agregue más propiedades a su clase ApplicationUser. Visite https://go.microsoft.com/fwlink/?LinkID=317594 para obtener más información.
     public class ApplicationUser : IdentityUser
     {
+        public string tipodeUsuario { get; set; }
+        public string nombreCamion { get; set; }
+        public string latitud { get; set; }
+        public string longitud { get; set; }
+        public int activo { get; set; }
+
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Tenga en cuenta que el valor de authenticationType debe coincidir con el definido en CookieAuthenticationOptions.AuthenticationType
